@@ -101,6 +101,11 @@ app.UseSwaggerUI(c =>
     c.ConfigObject.AdditionalItems.Add("persistAuthorization", "true");  // TODO: Store Authuntication without losing when refresh page
 });
 
+app.UseForwardedHeaders(new ForwardedHeadersOptions
+{
+    ForwardedHeaders = ForwardedHeaders.XForwardedFor | ForwardedHeaders.XForwardedProto
+});
+
 app.UseHttpsRedirection();
 app.UseAuthentication();
 app.UseAuthorization();
