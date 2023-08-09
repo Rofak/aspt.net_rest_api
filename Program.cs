@@ -4,6 +4,7 @@ using Restfull.Data;
 using Microsoft.IdentityModel.Tokens;
 using System.Text;
 using Microsoft.OpenApi.Models;
+using Microsoft.AspNetCore.HttpOverrides;
 using Restfull.Middleware;
 
 var builder = WebApplication.CreateBuilder(args);
