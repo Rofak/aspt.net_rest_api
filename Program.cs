@@ -91,14 +91,15 @@ builder.Services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.
-if (app.Environment.IsDevelopment())
+if (!app.Environment.IsDevelopment())
 {
-    app.UseSwagger();
-    app.UseSwaggerUI(c =>
-    {
-        c.ConfigObject.AdditionalItems.Add("persistAuthorization", "true");  // TODO: Store Authuntication without losing when refresh page
-    });
+    app.UseHttpsRedirection();
 }
+app.UseSwagger();
+app.UseSwaggerUI(c =>
+{
+    c.ConfigObject.AdditionalItems.Add("persistAuthorization", "true");  // TODO: Store Authuntication without losing when refresh page
+});
 
 app.UseHttpsRedirection();
 app.UseAuthentication();
