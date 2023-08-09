@@ -102,11 +102,6 @@ app.UseSwaggerUI(c =>
     c.ConfigObject.AdditionalItems.Add("persistAuthorization", "true");  // TODO: Store Authuntication without losing when refresh page
 });
 
-builder.Services.Configure<ForwardedHeadersOptions>(options =>
-{
-    options.KnownProxies.Add(IPAddress.Parse("84.46.250.21"));
-});
-
 app.UseForwardedHeaders(new ForwardedHeadersOptions
 {
     ForwardedHeaders = ForwardedHeaders.XForwardedFor | ForwardedHeaders.XForwardedProto
