@@ -11,9 +11,9 @@ Create Rest API
 
 #### Step.1 Create dir.
 `sudo mkdir -p /var/www/your_domain/html`
-#### Step.2 Assign Ownership of Directory
+#### Step.2 Assign Ownership of Directory.
 `sudo chown -R $USER:$USER /var/www/your_domain/html`
-###@ Step.3 Allow Ownership to read,write,execute file
+### Step.3 Allow Ownership to read,write,execute file
 `sudo chmod -R 755 /var/www/your_domain`
 #### Step.4 Go to project folder. 
   1.run `dotnet build`  (builds the project and its dependencies into a set of binaries) </br>
